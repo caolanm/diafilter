@@ -30,7 +30,7 @@ include $(PRJ)/settings/settings.mk
 include $(PRJ)/settings/std.mk
 
 DIAFILTER_PACKAGENAME=diafilter
-DIAFILTER_VERSION=1.7.5
+DIAFILTER_VERSION=1.7.6
 
 # Platform specific variables
 ifeq "$(PLATFORM)" "windows"

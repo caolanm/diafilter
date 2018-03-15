@@ -1,3 +1,6 @@
+v1.7.6
+    * migrate to github
+
 v1.7.5
     * rhbz#1307830 fix C++11 build
 
