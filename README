@@ -31,5 +31,4 @@ To uninstall:
 Use unopkg remove mcnamara.caolan.diafilter
 or for a system-wide extension unopkg remove --shared mcnamara.caolan.diafilter
 
-project home:  https://fedorahosted.org/openoffice.org-diafilter
-mailing list: https://fedorahosted.org/mailman/listinfo/ooodia-devel
+project home:  https://github.com/caolanm/diafilter
