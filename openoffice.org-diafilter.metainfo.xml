@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="addon">
+  <id>org.fedorahosted.openoffice.org-diafilter.addon</id>
+  <extends>libreoffice-calc.desktop</extends>
+  <extends>libreoffice-draw.desktop</extends>
+  <extends>libreoffice-impress.desktop</extends>
+  <extends>libreoffice-writer.desktop</extends>
+  <name>openoffice.org-diafilter</name>
+  <summary>Allows to open Dia diagrams and shape libraries from LibreOffice</summary>
+  <url type="homepage">http://fedorahosted.org/openoffice.org-diafilter</url>
+  <url type="bugtracker">https://fedorahosted.org/openoffice.org-diafilter/report</url>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0+ and LGPL-3.0+</project_license>
+</component>
