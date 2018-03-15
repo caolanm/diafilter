@@ -1,0 +1,4 @@
+* complete all shapes
+* Fix OOo itself to allow non-filled arrow heads
+* Fix OOo itself to allow extra glue points on connectors (ooo#18806)
+* Support arrow heads with different height than width

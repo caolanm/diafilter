@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Exec=libreoffice -draw %U
+MimeType=application/x-dia-diagram;application/x-dia-shape;
+Name=LibreOffice DIA Format Importer
+GenericName=DIA Format Importer
+NoDisplay=true

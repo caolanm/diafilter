@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE manifest:manifest PUBLIC "-//OpenOffice.org//DTD Manifest 1.0//EN"
+    "Manifest.dtd">
+<manifest:manifest xmlns:manifest="http://openoffice.org/2001/manifest">
+  <manifest:file-entry
+   manifest:media-type="application/vnd.sun.star.uno-component;type=native;platform=UNOPKG_PLATFORM"
+   manifest:full-path="DIAFILTER_EXTENSION_SHAREDLIB"/>
+  <manifest:file-entry
+   manifest:media-type="application/vnd.sun.star.configuration-data"
+   manifest:full-path="dia_types.xcu"/>
+  <manifest:file-entry
+   manifest:media-type="application/vnd.sun.star.configuration-data"
+   manifest:full-path="dia_filters.xcu"/>
+  <manifest:file-entry
+   manifest:media-type="application/vnd.sun.star.configuration-data"
+   manifest:full-path="Paths.xcu"/>
+  <manifest:file-entry
+   manifest:media-type="application/vnd.sun.star.package-bundle-description"
+   manifest:full-path="help/component.txt"/>
+</manifest:manifest>

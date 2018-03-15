@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<oor:component-data xmlns:oor="http://openoffice.org/2001/registry" xmlns:xs="http://www.w3.org/2001/XMLSchema" oor:package="org.openoffice.TypeDetection" oor:name="Types">
+   <node oor:name="Types">
+	<node oor:name="dia_DIA" oor:op="replace" oor:finalized="true" oor:mandatory="true">
+		<prop oor:name="DetectService"><value>mcnamara.caolan.comp.Draw.DIAFilter</value></prop>
+		<prop oor:name="Extensions"><value>dia</value></prop>
+		<prop oor:name="MediaType"><value>application/x-dia-diagram</value></prop>
+		<prop oor:name="UIName">
+			<value>Dia Diagram File</value>
+		</prop>
+		<prop oor:name="ClipboardFormat"/>
+	</node>
+	<node oor:name="shape_DIA" oor:op="replace" oor:finalized="true" oor:mandatory="true">
+		<prop oor:name="DetectService"><value>mcnamara.caolan.comp.Draw.DIAShapeFilter</value></prop>
+		<prop oor:name="Extensions"><value>shape</value></prop>
+		<prop oor:name="MediaType"><value>application/x-dia-shape</value></prop>
+		<prop oor:name="UIName">
+			<value>Dia Shape File</value>
+		</prop>
+		<prop oor:name="ClipboardFormat"/>
+	</node>
+   </node>
+</oor:component-data>

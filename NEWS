@@ -1,0 +1,57 @@
+v1.7.5
+    * rhbz#1307830 fix C++11 build
+
+v1.7.4
+    * rhbz#1261986 assert in string access
+
+v1.7.3
+    * rhbz#1185566 SIGABRT in DIAFilter::detect
+
+v1.7.2
+    * fix double + build error
+
+v1.7.1
+    * fix gcc warnings
+    * use boost::unordered_map instead of std::hash_map
+
+v1.7.0
+    * support "default" bg/fg in shapes
+    * add basic KHAOS shapes
+    * workaround http://www.openoffice.org/issues/show_bug.cgi?id=114567
+
+v1.6.0
+    * add gallery support to add dia shapes to the OOo gallery
+
+v1.5.1
+    * fix crash due to changing vector from underneath reference
+
+v1.5
+    * rearrange textbox code to use the shapes defined box rather than
+      that of the .dia seeing as dia totally ignores whatever appears
+      in the file in favour or the .shape one
+    * resize shapes that are too narrow to contain their text, like dia does
+    * snap connector line endpoints to their connector positions and recalculate
+      their routes.
+
+v1.4
+    * dia image paths are relative to the user's home dir, convert
+      them relative to that dir to file:// urls
+    * refactor to split shape importer into a template/importer to
+      split state out into template and leave importer stateless
+    * add connection points to FlowChart Diamonds
+    * expand the page size if the diagram doesn't fit on a single page
+    * Model zig-zags and fallback to Polylines if we determine that
+      OOo can't route them they way they should be
+
+v1.3
+    * Make zig-zags into connectors, add line-skew for them
+    * add connection points to FlowChart Boxes
+
+v1.2
+    * Dia has a different idea about font-sizes, so do the best
+      we can to output a font-size that matches it
+    * Implement paragraph alignment
+    * Get connection points to shape-templates working
+v1.1
+    * added group support
+    * added arrow support

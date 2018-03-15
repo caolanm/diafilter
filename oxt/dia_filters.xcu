@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<oor:component-data xmlns:oor="http://openoffice.org/2001/registry" xmlns:xs="http://www.w3.org/2001/XMLSchema" oor:package="org.openoffice.TypeDetection" oor:name="Filter">
+  <node oor:name="Filters">
+	<node oor:name="dia_Import" oor:op="replace" oor:finalized="true" oor:mandatory="true">
+		<prop oor:name="Type"><value>dia_DIA</value></prop>
+		<prop oor:name="DocumentService"><value>com.sun.star.drawing.DrawingDocument</value></prop>
+		<prop oor:name="FilterService"><value>mcnamara.caolan.comp.Draw.DIAFilter</value></prop>
+		<prop oor:name="UIName">
+			<value>Dia Diagram File</value>
+		</prop>
+		<prop oor:name="Flags"><value>IMPORT ALIEN 3RDPARTYFILTER</value></prop>
+	</node>
+	<node oor:name="shape_Import" oor:op="replace" oor:finalized="true" oor:mandatory="true">
+		<prop oor:name="Type"><value>shape_DIA</value></prop>
+		<prop oor:name="DocumentService"><value>com.sun.star.drawing.DrawingDocument</value></prop>
+		<prop oor:name="FilterService"><value>mcnamara.caolan.comp.Draw.DIAShapeFilter</value></prop>
+		<prop oor:name="UIName">
+			<value>Dia Shape File</value>
+		</prop>
+		<prop oor:name="Flags"><value>IMPORT ALIEN 3RDPARTYFILTER</value></prop>
+	</node>
+  </node>
+</oor:component-data>

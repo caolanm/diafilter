@@ -1,0 +1,35 @@
+openoffice.org-diafilter is an import filter for .dia and .shape format
+diagrams for OpenOffice.org.
+
+openoffice.org-diafilter is released under GPLv3 or later.
+
+Some parts of openoffice.org-diafilter are based on code from openoffice.org
+itself under the LGPLv3
+
+To be useful openoffice.org-diafilter must parse .shape files distributed with
+dia, itself released under the GPL
+
+To build you need: 
+a) The openoffice.org sdk, e.g. the openoffice.org-sdk package under
+RHEL/Fedora)
+b) The shapes files distributed with dia, e.g. install dia and they should now
+be available as /usr/share/dia/shapes)
+c) set your OpenOffice.org build environment
+i.e. under RHEL/Fedora use
+source /usr/lib*/openoffice.org/basis*/sdk/setsdkenv_unix.sh 
+d) now build with..
+make DIA_SHAPES_DIR=/usr/share/dia/shapes
+
+To install:
+The output is .oxt file called "diafilter.oxt" in the build dir
+install this for the current user using...
+unopkg add build/diafilter.oxt
+To install system-wide for all users then as root use...
+unopkg add --shared build/diafilter.oxt
+
+To uninstall:
+Use unopkg remove mcnamara.caolan.diafilter
+or for a system-wide extension unopkg remove --shared mcnamara.caolan.diafilter
+
+project home:  https://fedorahosted.org/openoffice.org-diafilter
+mailing list: https://fedorahosted.org/mailman/listinfo/ooodia-devel
