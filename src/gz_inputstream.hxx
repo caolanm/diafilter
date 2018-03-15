@@ -20,6 +20,8 @@
 #ifndef GZ_INPUTSTREAM_HXX
 #define GZ_INPUTSTREAM_HXX
 
+#include <com/sun/star/io/BufferSizeExceededException.hpp>
+#include <com/sun/star/io/NotConnectedException.hpp>
 #include <com/sun/star/io/XInputStream.hpp>
 #include <cppuhelper/implbase1.hxx>
 
@@ -41,34 +43,16 @@ public:
 
     // XInputStream
     virtual sal_Int32 SAL_CALL readBytes( ::com::sun::star::uno::Sequence< sal_Int8 > & aData,
-        sal_Int32 nBytesToRead )
-            throw( ::com::sun::star::io::NotConnectedException,
-                ::com::sun::star::io::BufferSizeExceededException,
-                ::com::sun::star::io::IOException,
-                ::com::sun::star::uno::RuntimeException );
+        sal_Int32 nBytesToRead );
 
     virtual sal_Int32 SAL_CALL readSomeBytes( ::com::sun::star::uno::Sequence< sal_Int8 > & aData,
-        sal_Int32 nMaxBytesToRead )
-            throw( ::com::sun::star::io::NotConnectedException,
-                ::com::sun::star::io::BufferSizeExceededException,
-                ::com::sun::star::io::IOException,
-                ::com::sun::star::uno::RuntimeException );
+        sal_Int32 nMaxBytesToRead );
 
-    virtual void SAL_CALL skipBytes( sal_Int32 nBytesToSkip )
-            throw( ::com::sun::star::io::NotConnectedException,
-                ::com::sun::star::io::BufferSizeExceededException,
-                ::com::sun::star::io::IOException,
-                ::com::sun::star::uno::RuntimeException );
+    virtual void SAL_CALL skipBytes( sal_Int32 nBytesToSkip );
 
-    virtual sal_Int32 SAL_CALL available( void )
-            throw( ::com::sun::star::io::NotConnectedException,
-                ::com::sun::star::io::IOException,
-                ::com::sun::star::uno::RuntimeException );
+    virtual sal_Int32 SAL_CALL available( void );
 
-    virtual void SAL_CALL closeInput( void )
-            throw( ::com::sun::star::io::NotConnectedException,
-                ::com::sun::star::io::IOException,
-                ::com::sun::star::uno::RuntimeException );
+    virtual void SAL_CALL closeInput( void );
 };
 
 #endif

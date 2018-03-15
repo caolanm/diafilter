@@ -47,26 +47,19 @@ public:
 
 protected:
     // ::com::sun::star::lang::XServiceInfo:
-    virtual rtl::OUString SAL_CALL getImplementationName()
-    	throw (uno::RuntimeException);
-    virtual sal_Bool SAL_CALL supportsService(const rtl::OUString & serviceName)
-    	throw (uno::RuntimeException);
-    virtual uno::Sequence<rtl::OUString> SAL_CALL getSupportedServiceNames()
-    	throw (uno::RuntimeException);
+    virtual rtl::OUString SAL_CALL getImplementationName();
+    virtual sal_Bool SAL_CALL supportsService(const rtl::OUString & serviceName);
+    virtual uno::Sequence<rtl::OUString> SAL_CALL getSupportedServiceNames();
 
     // XFilter
-    virtual sal_Bool SAL_CALL filter( const uno::Sequence< beans::PropertyValue >& rDescriptor )
-        throw (uno::RuntimeException);
-    virtual void SAL_CALL cancel()
-        throw (uno::RuntimeException) {}
+    virtual sal_Bool SAL_CALL filter( const uno::Sequence< beans::PropertyValue >& rDescriptor );
+    virtual void SAL_CALL cancel();
 
     // XImporter
-    virtual void SAL_CALL setTargetDocument( const uno::Reference< lang::XComponent >& xDoc )
-        throw (lang::IllegalArgumentException, uno::RuntimeException);
+    virtual void SAL_CALL setTargetDocument( const uno::Reference< lang::XComponent >& xDoc );
 
     // XExtendedFilterDetection
-    virtual rtl::OUString SAL_CALL detect( uno::Sequence< beans::PropertyValue >& io_rDescriptor )
-        throw (uno::RuntimeException);
+    virtual rtl::OUString SAL_CALL detect( uno::Sequence< beans::PropertyValue >& io_rDescriptor );
 private:
     rtl::OUString msInstallDir;
     uno::Reference< uno::XComponentContext > mxCtx;
@@ -137,26 +130,19 @@ public:
     static uno::Reference<XInterface> get(uno::Reference<uno::XComponentContext> const & context);
 protected:
     // ::com::sun::star::lang::XServiceInfo:
-    virtual rtl::OUString SAL_CALL getImplementationName()
-    	throw (uno::RuntimeException);
-    virtual sal_Bool SAL_CALL supportsService(const rtl::OUString & serviceName)
-    	throw (uno::RuntimeException);
-    virtual uno::Sequence<rtl::OUString> SAL_CALL getSupportedServiceNames()
-    	throw (uno::RuntimeException);
+    virtual rtl::OUString SAL_CALL getImplementationName();
+    virtual sal_Bool SAL_CALL supportsService(const rtl::OUString & serviceName);
+    virtual uno::Sequence<rtl::OUString> SAL_CALL getSupportedServiceNames();
 
     // XFilter
-    virtual sal_Bool SAL_CALL filter( const uno::Sequence< beans::PropertyValue >& rDescriptor )
-        throw (uno::RuntimeException);
-    virtual void SAL_CALL cancel()
-        throw (uno::RuntimeException) {}
+    virtual sal_Bool SAL_CALL filter( const uno::Sequence< beans::PropertyValue >& rDescriptor );
+    virtual void SAL_CALL cancel();
 
     // XImporter
-    virtual void SAL_CALL setTargetDocument( const uno::Reference< lang::XComponent >& xDoc )
-        throw (lang::IllegalArgumentException, uno::RuntimeException);
+    virtual void SAL_CALL setTargetDocument( const uno::Reference< lang::XComponent >& xDoc );
 
     // XExtendedFilterDetection
-    virtual rtl::OUString SAL_CALL detect( uno::Sequence< beans::PropertyValue >& io_rDescriptor )
-        throw (uno::RuntimeException);
+    virtual rtl::OUString SAL_CALL detect( uno::Sequence< beans::PropertyValue >& io_rDescriptor );
 private:
     uno::Reference< lang::XMultiServiceFactory > mxMSF;
     uno::Reference< lang::XComponent > mxDstDoc;

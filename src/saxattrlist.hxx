@@ -65,15 +65,15 @@ namespace pdfi
         virtual ~SaxAttrList();
     
         // ::com::sun::star::xml::sax::XAttributeList
-        virtual sal_Int16 SAL_CALL getLength() throw();
-        virtual rtl::OUString SAL_CALL getNameByIndex(sal_Int16 i) throw();
-        virtual rtl::OUString SAL_CALL getTypeByIndex(sal_Int16 i) throw();
-        virtual rtl::OUString SAL_CALL getTypeByName(const ::rtl::OUString& aName) throw();
-        virtual rtl::OUString SAL_CALL getValueByIndex(sal_Int16 i) throw();
-        virtual rtl::OUString SAL_CALL getValueByName(const ::rtl::OUString& aName) throw();
+        virtual sal_Int16 SAL_CALL getLength();
+        virtual rtl::OUString SAL_CALL getNameByIndex(sal_Int16 i);
+        virtual rtl::OUString SAL_CALL getTypeByIndex(sal_Int16 i);
+        virtual rtl::OUString SAL_CALL getTypeByName(const ::rtl::OUString& aName);
+        virtual rtl::OUString SAL_CALL getValueByIndex(sal_Int16 i);
+        virtual rtl::OUString SAL_CALL getValueByName(const ::rtl::OUString& aName);
     
         // ::com::sun::star::util::XCloneable
-        virtual ::com::sun::star::uno::Reference< ::com::sun::star::util::XCloneable > SAL_CALL createClone() throw();
+        virtual ::com::sun::star::uno::Reference< ::com::sun::star::util::XCloneable > SAL_CALL createClone();
     };
 }
 

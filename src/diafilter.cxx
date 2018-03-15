@@ -25,6 +25,7 @@
 
 #include <com/sun/star/ucb/XSimpleFileAccess.hpp>
 
+#include <com/sun/star/io/IOException.hpp>
 #include <com/sun/star/io/XSeekable.hpp>
 
 #include <com/sun/star/xml/sax/XDocumentHandler.hpp>
@@ -125,7 +126,7 @@ public:
     const TextStyleManager& getTextStyleManager() const { return maTextStyles; }
 
     void recursiveScan(const rtl::OUString &rDir);
-    void importShape(const rtl::OUString &rShapeFile) throw();
+    void importShape(const rtl::OUString &rShapeFile);
 
     //Dia positions are relative to the page margins
     //while draw's are relative to the paper
@@ -3001,7 +3002,7 @@ void DiaImporter::recursiveScan(const rtl::OUString &rDir)
     }
 }
 
-void DiaImporter::importShape(const rtl::OUString &rShapeFile) throw()
+void DiaImporter::importShape(const rtl::OUString &rShapeFile)
 {
     try
     {
@@ -3868,7 +3869,6 @@ bool DiaImporter::convert()
 
 
 sal_Bool SAL_CALL DIAFilter::filter( const uno::Sequence< beans::PropertyValue >& rDescriptor )
-    throw (uno::RuntimeException)
 {
     if (!mxDstDoc.is())
         return sal_False;
@@ -3917,13 +3917,11 @@ sal_Bool SAL_CALL DIAFilter::filter( const uno::Sequence< beans::PropertyValue >
 }
 
 void SAL_CALL DIAFilter::setTargetDocument( const uno::Reference< lang::XComponent >& xDoc )
-    throw (lang::IllegalArgumentException, uno::RuntimeException)
 {
     mxDstDoc = xDoc;
 }
 
 rtl::OUString SAL_CALL DIAFilter::detect( uno::Sequence< beans::PropertyValue >& io_rDescriptor )
-    throw (uno::RuntimeException)
 {
     com::sun::star::uno::Reference< com::sun::star::io::XInputStream > xInputStream;
 
@@ -3977,13 +3975,11 @@ rtl::OUString SAL_CALL DIAFilter::detect( uno::Sequence< beans::PropertyValue >&
 }
 
 rtl::OUString SAL_CALL DIAFilter::getImplementationName()
-    throw (uno::RuntimeException)
 {
     return getImplementationName_static();
 }
 
 sal_Bool SAL_CALL DIAFilter::supportsService(const rtl::OUString &serviceName)
-    throw (uno::RuntimeException) 
 {
     uno::Sequence<rtl::OUString> serviceNames = getSupportedServiceNames();
     for (sal_Int32 i = 0; i < serviceNames.getLength(); ++i)
@@ -3995,7 +3991,6 @@ sal_Bool SAL_CALL DIAFilter::supportsService(const rtl::OUString &serviceName)
 }
 
 uno::Sequence<rtl::OUString> SAL_CALL DIAFilter::getSupportedServiceNames()
-    throw (uno::RuntimeException)
 {
     return getSupportedServiceNames_static();
 }

@@ -83,7 +83,6 @@ gz_InputStream::~gz_InputStream()
 }
 
 void SAL_CALL gz_InputStream::closeInput()
-    throw( io::NotConnectedException, io::IOException, uno::RuntimeException )
 {
     inflateEnd(mpStream);
     delete mpStream;
@@ -91,16 +90,12 @@ void SAL_CALL gz_InputStream::closeInput()
 }
 
 void SAL_CALL gz_InputStream::skipBytes( sal_Int32 nBytesToSkip )
-    throw( io::NotConnectedException, io::BufferSizeExceededException,
-      io::IOException, uno::RuntimeException )
 {
 	uno::Sequence< sal_Int8 > aData(nBytesToSkip);
     readBytes(aData, nBytesToSkip);
 }
 
 sal_Int32 SAL_CALL gz_InputStream::readBytes( uno::Sequence< sal_Int8 >& aData, sal_Int32 nBytesToRead )
-    throw( io::NotConnectedException, io::BufferSizeExceededException,
-      io::IOException, uno::RuntimeException )
 {
     try
     {
@@ -133,15 +128,12 @@ sal_Int32 SAL_CALL gz_InputStream::readBytes( uno::Sequence< sal_Int8 >& aData, 
 }
 
 sal_Int32 SAL_CALL gz_InputStream::available()
-    throw( io::NotConnectedException, io::IOException, uno::RuntimeException )
 {
     return 0;
 }
 
 sal_Int32 SAL_CALL gz_InputStream::readSomeBytes(
 	uno::Sequence< sal_Int8 >& aData, sal_Int32 nMaxBytesToRead )
-    throw( io::NotConnectedException, io::BufferSizeExceededException,
-      io::IOException, uno::RuntimeException )
 {
     return readBytes(aData, nMaxBytesToRead);
 }

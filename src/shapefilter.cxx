@@ -19,6 +19,7 @@
 
 #include <com/sun/star/xml/sax/XDocumentHandler.hpp>
 #include <com/sun/star/xml/dom/XDocumentBuilder.hpp>
+#include <com/sun/star/io/IOException.hpp>
 #include <com/sun/star/io/XSeekable.hpp>
 #include <comphelper/string.hxx>
 #include <basegfx/polygon/b2dpolypolygontools.hxx>
@@ -1047,7 +1048,6 @@ DIAShapeFilter::DIAShapeFilter( const uno::Reference< uno::XComponentContext >& 
 }
 
 sal_Bool SAL_CALL DIAShapeFilter::filter( const uno::Sequence< beans::PropertyValue >& rDescriptor )
-    throw (uno::RuntimeException)
 {
     if (!mxDstDoc.is())
         return sal_False;
@@ -1091,13 +1091,11 @@ sal_Bool SAL_CALL DIAShapeFilter::filter( const uno::Sequence< beans::PropertyVa
 }
 
 void SAL_CALL DIAShapeFilter::setTargetDocument( const uno::Reference< lang::XComponent >& xDoc )
-    throw (lang::IllegalArgumentException, uno::RuntimeException)
 {
     mxDstDoc = xDoc;
 }
 
 rtl::OUString SAL_CALL DIAShapeFilter::detect( uno::Sequence< beans::PropertyValue >& io_rDescriptor )
-    throw (uno::RuntimeException)
 {
     com::sun::star::uno::Reference< com::sun::star::io::XInputStream > xInputStream;
 
@@ -1140,13 +1138,11 @@ rtl::OUString SAL_CALL DIAShapeFilter::detect( uno::Sequence< beans::PropertyVal
 }
 
 rtl::OUString SAL_CALL DIAShapeFilter::getImplementationName()
-    throw (uno::RuntimeException)
 {
     return getImplementationName_static();
 }
 
 sal_Bool SAL_CALL DIAShapeFilter::supportsService(const rtl::OUString &serviceName)
-    throw (uno::RuntimeException) 
 {
     uno::Sequence<rtl::OUString> serviceNames = getSupportedServiceNames();
     for (sal_Int32 i = 0; i < serviceNames.getLength(); ++i)
@@ -1158,7 +1154,6 @@ sal_Bool SAL_CALL DIAShapeFilter::supportsService(const rtl::OUString &serviceNa
 }
 
 uno::Sequence<rtl::OUString> SAL_CALL DIAShapeFilter::getSupportedServiceNames()
-    throw (uno::RuntimeException)
 {
     return getSupportedServiceNames_static();
 }
